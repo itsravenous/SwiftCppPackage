@@ -5,6 +5,7 @@ let package = Package(
     name: "i3s",
     products: [
       .executable(name: "i3s", targets: ["i3s"]),
+      .library(name: "swift-exec", targets: ["swift-exec"]),
     ],
     targets: [
       .target(name: "sharkcpp"),
