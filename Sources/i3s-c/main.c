@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
   int count = 4;
   struct FingerPrint* fgp = FingerPrint_new(&refs, &spots, count);
   struct FingerPrint* fgp2 = FingerPrint_new(&refs2, &spots2, count);
-  Compare_compareTwo(fgp2, fgp);
+  Compare_two(fgp2, fgp);
   double score = FingerPrint_getScore(fgp);
   printf("Score: %f\n", score);
 }

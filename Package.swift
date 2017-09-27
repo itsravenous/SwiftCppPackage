@@ -4,14 +4,18 @@ import PackageDescription
 let package = Package(
     name: "i3s",
     products: [
-      .executable(name: "i3s", targets: ["i3s"]),
       .library(name: "SwiftExec", targets: ["swift-exec"]),
+
+      .executable(name: "i3s-c", targets: ["i3s-c"]),
+      .executable(name: "i3s-swift", targets: ["i3s-swift"]),
     ],
     targets: [
       .target(name: "sharkcpp"),
       .target(name: "sharkcwrapper", dependencies:["sharkcpp"]),
       .target(name: "swift-exec", dependencies:["sharkcwrapper"]),
 
-      .target(name: "i3s")
+      .target(name: "i3s"),
+      .target(name: "i3s-c", dependencies: ["i3s"]),
+      .target(name: "i3s-swift", dependencies: ["i3s"]),
     ]
 )
