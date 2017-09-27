@@ -9,8 +9,9 @@ extern "C" {
     return new Element();
   }
 
-  FingerPrint* FingerPrint_new(double *ref, double *data, int nr) {
-    return new FingerPrint(ref, data, nr);
+  FingerPrint* FingerPrint_new(const double *ref, const double *data, int nr) {
+    /* it's safe to cast away const: ref and data are not actually modified */
+    return new FingerPrint((double *)ref, (double *)data, nr);
   }
 
   double FingerPrint_getScore(FingerPrint *fgp) {

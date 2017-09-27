@@ -14,8 +14,19 @@ public class Element {
 public class FingerPrint {
   var f: OpaquePointer
 
-  public init(ref: inout [Double], data: inout [Double], nr: Int) {
-    f = FingerPrint_new(&ref, &data, Int32(nr));
+  private static func do_init(ref: [Double], data: [Double], nr: Int) -> OpaquePointer {
+    let ref6 = ref[0 ..< 6]
+    let data_nr8 = data[0 ..< nr*8]
+    
+    return ref6.withUnsafeBufferPointer { ref6_unsafe in
+      return data_nr8.withUnsafeBufferPointer { data_nr8_unsafe in
+        return FingerPrint_new(ref6_unsafe.baseAddress, data_nr8_unsafe.baseAddress, Int32(nr))
+      }
+    }
+  }
+
+  public init(ref: [Double], data: [Double], nr: Int) {
+    f = FingerPrint.do_init(ref: ref, data: data, nr: nr)
   } 
   deinit {
     // TODO FingerPrint_delete(f)

@@ -16,8 +16,8 @@ import i3s_swift
   ]
   let count: Int = 4;
 
-  var fgp = FingerPrint(ref: &refs, data: &spots, nr: count)
-  var fgp2 = FingerPrint(ref: &refs2, data: &spots2, nr: count)
+  var fgp = FingerPrint(ref: refs, data: spots, nr: count)
+  var fgp2 = FingerPrint(ref: refs2, data: spots2, nr: count)
   
   fgp.compare(fgp2)
   
