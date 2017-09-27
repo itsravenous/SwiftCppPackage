@@ -25,7 +25,6 @@
 #include <math.h>
 
 #include "../incl/element.hpp"
-#include "../incl/fingerprint.hpp"
 
 // extern double minRatioArea;
 // extern double maxAngleDiff;
