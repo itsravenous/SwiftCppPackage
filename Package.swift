@@ -14,7 +14,7 @@ let package = Package(
       .target(name: "sharkcwrapper", dependencies:["sharkcpp"]),
       .target(name: "swift-exec", dependencies:["sharkcwrapper"]),
 
-      .target(name: "i3s"),
+      .target(name: "i3s", publicHeadersPath: "incl_pub"),
       .target(name: "i3s-c", dependencies: ["i3s"]),
       .target(name: "i3s-swift", dependencies: ["i3s"]),
     ]
