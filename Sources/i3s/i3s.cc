@@ -22,6 +22,8 @@ extern "C" {
     int paircnt = 0;
     Compare::compareTwo(*unknown, *fp, pairs, &paircnt);
     // printf("score %f", fp.getScore());
+    delete[] pairs;
+
     return fp->getScore();
   }
 }
