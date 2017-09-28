@@ -10,7 +10,9 @@ typedef struct Element Element;
 typedef struct FingerPrint FingerPrint;
 
 Element* Element_new();
+void Element_delete(Element *element);
 FingerPrint* FingerPrint_new(const double *ref, const double *data, int nr);
+void FingerPrint_delete(FingerPrint* fgp);
 double FingerPrint_getScore(FingerPrint *fgp);
 double Compare_two(FingerPrint* unknown, FingerPrint* fp);
 

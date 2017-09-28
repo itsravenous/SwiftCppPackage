@@ -7,7 +7,7 @@ public class Element {
     e = Element_new()
   }
   deinit {
-    // TODO Element_delete(e)
+    Element_delete(e)
   }
 }
 
@@ -29,7 +29,7 @@ public class FingerPrint {
     f = FingerPrint.do_init(ref: ref, data: data, nr: nr)
   } 
   deinit {
-    // TODO FingerPrint_delete(f)
+    FingerPrint_delete(f)
   }
 
   public func compare(_ unknown: FingerPrint) -> Double {
