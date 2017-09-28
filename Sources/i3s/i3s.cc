@@ -9,9 +9,17 @@ extern "C" {
     return new Element();
   }
 
+  void Element_delete(Element *element) {
+    delete element;
+  }
+
   FingerPrint* FingerPrint_new(const double *ref, const double *data, int nr) {
     /* it's safe to cast away const: ref and data are not actually modified */
     return new FingerPrint((double *)ref, (double *)data, nr);
+  }
+
+  void FingerPrint_delete(FingerPrint *fgp) {
+    delete fgp;
   }
 
   double FingerPrint_getScore(FingerPrint *fgp) {
